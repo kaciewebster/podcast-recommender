@@ -11,4 +11,8 @@
 
 ## Recommender
 
-[Content-Based](https://www.kdnuggets.com/2019/11/content-based-recommender-using-natural-language-processing-nlp.html)
+[Content Based Recommender Using NLP](https://www.kdnuggets.com/2019/11/content-based-recommender-using-natural-language-processing-nlp.html)
+
+## Flask Application
+
+[How To Make a Web Application Using Flaks in Python 3 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3)

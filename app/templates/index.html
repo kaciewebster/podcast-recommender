@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='jquery.js') }}">
+    </script>
+
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='app.js') }}">
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}" type="text/css">
+
+    <title>ContentBasedPodcastRecommender</title>
+</head>
+
+<body>
+<div class='container'>
+    <h1>Welcome to the "Because you listened to ..." Podcast Recommender!</h1>
+
+    <a href="https://www.listennotes.com">
+        <img src="https://s3.amazonaws.com/mashape-production-logos/apis/5a2061f4e4b0d45349f7772d_medium" style="width:480px;height:240px;" class="center">
+    </a>
+
+    <div class="row">
+        <p>This application will recommend podcasts based on it's description, category, and language.</p>
+        <p>Please provide the title of a podcast and the number of recommendations you would like.</p>
+    </div>
+
+    <div class="row">
+        <p>Because you listened to ...</p>
+        <div class="form-inline">
+
+        <div class="form-group">
+          <p class="form-control-static">Title</p>
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="title"></input>
+        </div>
+
+        <div class="form-group">
+          <p class="form-control-static"># of Recommendations</p>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="num_recs"></input>
+        </div>
+
+        <div class="form-group">
+          <button type="button" id="submit" class="btn-primary">Go!</button>
+    </div>
+
+    <div class="row">
+        <p><span id="recommend"></span></p>
+    </div>
+
+</div>
+
+</body>
+</html>
