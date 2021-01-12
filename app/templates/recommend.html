@@ -12,10 +12,6 @@
               src="{{ url_for('static', filename='jquery.js') }}">
       </script>
 
-      <script type="text/javascript"
-              src="{{ url_for('static', filename='app.js') }}">
-      </script>
-
       <link rel="stylesheet" href="{{ url_for('static', filename= 'css/_style.css') }}" type="text/css">
 
 </head>
@@ -42,6 +38,24 @@
     <div class="row">
       <p><span id="solution"></span></p>
     </div>
+
+      {% if names == "We're sorry, but we can't find your podcast!"%}
+      <p>We're sorry, but we couldn't find your podcast!</p>
+
+      {% else %}
+      <table style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+      </tr>
+      {% for key, values in names.items() %}
+      <tr>
+        <td>{{key}}</td>
+        <td>{{values}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+      {% endif %}
 
 </body>
 </html>

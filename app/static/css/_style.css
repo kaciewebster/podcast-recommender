@@ -27,8 +27,11 @@ margin-right: auto;
 width: 50%;
 }
 
-div.container
-{
+div.container {
   display: block;
   text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
