@@ -28,13 +28,17 @@ Since the recommender was built on the text descriptions, categories, and langua
 
 Here is a word cloud of the most common words in the text descriptions. As you can see, "podcast" is the most popular word, which comes at no surprise. However, if you look closer, you can see words such as: "business", "music", "world", "church", and "learn", which show the diversity among the podcast topics.
 
-<div style="text-align:center"><img src="imgs/word-cloud.png" /></div>
+<p align="center">
+  <img src="imgs/word-cloud.png">
+</p>
 
 ### The Categories
 
 This dataset had 83 categories each podcast could be assigned to. However, some categories were rare compared to others, so below is a bar plot of the categories that were more than 5% of the overall dataset. After further calculation, the 5 most common categories were spirituality, religion, Christianity, culture, and society.
 
-![categories](imgs/cat-proportions.png)
+<p align="center">
+  <img src="imgs/cat-proportions.png">
+</p>
 
 ### The Languages
 
@@ -61,4 +65,6 @@ To see the details of how this recommender was created, please refer to the [rec
 
 To see this recommender in action, please refer to the [app folder](app). Users will be asked to input a podcast they enjoy and the number of recommendations they would like. Below is a sample output for when the user asks for 3 similar recommendations for the podcast, *So Game We All*.
 
-![sample-output](imgs/sample.png)
+<p align="center">
+  <img src="imgs/sample.png">
+</p>
