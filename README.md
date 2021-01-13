@@ -14,4 +14,6 @@ This repository will create a web application to recommend podcasts based on use
 
 ## The Web Application
 
+To see this recommender in action, refer to the [app folder](app). Users will be asked to input a podcast they enjoy and the number of recommendations they would like. Below is a sample output for when the user asks for 3 similar recommendations for the podcast, *So Game We All*.
+
 ![sample-output](imgs/sample.png)
