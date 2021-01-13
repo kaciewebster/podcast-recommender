@@ -1,0 +1,8 @@
+git clone https://github.com/alainrouillon/py-googletrans.git
+cd ./py-googletrans
+git checkout origin/feature/enhance-use-of-direct-api
+python setup.py install
+
+pip install langid
+
+pip install nltk
