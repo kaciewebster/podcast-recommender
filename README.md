@@ -47,7 +47,7 @@ This dataset had 83 categories each podcast could be assigned to. However, some 
 This dataset also had 37 unique languages that these podcasts were assigned to. After some calculations, the majority of the podcasts were in English, and the rest of the languages hold a small percentage individually. Below is a table of the 10 most common languages and their respective proportion of the overall dataset.
 
 | Language  | Percentage  |
-| --------- | ----------- |
+| :---------: | :-----------: |
 | English | 81.75%  |
 | German  | 3.61% |
 | French  | 3.28% |
@@ -61,7 +61,7 @@ This dataset also had 37 unique languages that these podcasts were assigned to. 
 
 ## The Recommender
 
-To see the details of how this recommender was created, please refer to the [recommender folder](recommender). 
+To see the details of how this recommender was created, please refer to the [recommender folder](recommender). This is a content-based recommender, which means that the podcasts are compared based on key words from their descriptions, categories, and languages. After vectorizing the key words, a feature matrix was created. Each row was a podcast, and each column was a key word with the cell being the number of times that word was used in that podcast's content. Therefore, each podcast now has a vector to describe it's content. Then, utilizing cosine similarity, the similarity score of each combination of podcasts was recorded into a new matrix. Referencing these similarity scores, the recommender was able to sort and pull the most similar podcasts. As for a sanity check, the recommender also returns the categories of each podcast to validate whether the recommendations are in fact similar.
 
 ## The Web Application
 
