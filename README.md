@@ -32,11 +32,13 @@ Here is a word cloud of the most common words in the text descriptions. As you c
 
 ### The Categories
 
+This dataset had 83 categories each podcast could be assigned to. However, some categories were rare compared to others, so below is a bar plot of the categories that were more than 5% of the overall dataset. After further calculation, the 5 most common categories were spirituality, religion, Christianity, culture, and society.
+
 ![categories](imgs/cat-proportions.png)
 
-
-
 ### The Languages
+
+This dataset also had 37 unique languages that these podcasts were assigned to. After some calculations, the majority of the podcasts were in English. Below is a table of the 10 most common languages and their respective proportion of the overall dataset.
 
 
 
