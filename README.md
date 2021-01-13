@@ -8,12 +8,44 @@ This repository will create a web application to recommend podcasts based on use
 
 ## The Data
 
+The data was downloaded from [Kaggle](https://www.kaggle.com/listennotes/all-podcast-episodes-published-in-december-2017?select=podcasts.csv) but originates from the [Listen Notes](https://www.listennotes.com) database. The attributes used for this recommender were:
+
+1. **uuid**: the unique id to reference the podcast
+
+2. **title**: the title of the podcast
+
+3. **description**: the short text that describes the content of the podcast
+
+4. **category**: the category the podcast was assigned to
+
+5. **language**: the language the podcast was assigned to
+
 ## Exploration
+
+Since the recommender was built on the text descriptions, categories, and languages associated with each podcast, let's take a look at them.
+
+### The Descriptions
+
+Here is a word cloud of the most common words in the text descriptions. As you can see, "podcast" is the most popular word, which comes at no surprise. However, if you look closer, you can see words such as: business, music, world, church, and learn, which show the diversity among the podcast descriptions.
+
+![descriptions](imgs/word-cloud.png)
+
+### The Categories
+
+![categories](imgs/cat-proportions.png)
+
+
+
+### The Languages
+
+
 
 ## The Recommender
 
+To see the details of how this recommender was created, please refer to the [recommender folder](recommender). 
+
 ## The Web Application
 
-To see this recommender in action, refer to the [app folder](app). Users will be asked to input a podcast they enjoy and the number of recommendations they would like. Below is a sample output for when the user asks for 3 similar recommendations for the podcast, *So Game We All*.
+To see this recommender in action, please refer to the [app folder](app). Users will be asked to input a podcast they enjoy and the number of recommendations they would like. Below is a sample output for when the user asks for 3 similar recommendations for the podcast, *So Game We All*.
 
 ![sample-output](imgs/sample.png)
