@@ -38,9 +38,20 @@ This dataset had 83 categories each podcast could be assigned to. However, some 
 
 ### The Languages
 
-This dataset also had 37 unique languages that these podcasts were assigned to. After some calculations, the majority of the podcasts were in English. Below is a table of the 10 most common languages and their respective proportion of the overall dataset.
+This dataset also had 37 unique languages that these podcasts were assigned to. After some calculations, the majority of the podcasts were in English, and the rest of the languages hold a small percentage individually. Below is a table of the 10 most common languages and their respective proportion of the overall dataset.
 
-
+| Language  | Percentage  |
+| --------- | ----------- |
+| English | 81.75%  |
+| German  | 3.61% |
+| French  | 3.28% |
+| Spanish | 3.01% |
+| Portuguese  | 1.55% |
+| Swedish | 1.43% |
+| Chinese | 1.10% |
+| Japanese | 0.89%  |
+| Italian | 0.67% |
+| Russian | 0.51% |
 
 ## The Recommender
 
