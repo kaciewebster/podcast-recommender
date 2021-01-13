@@ -26,7 +26,7 @@ Since the recommender was built on the text descriptions, categories, and langua
 
 ### The Descriptions
 
-Here is a word cloud of the most common words in the text descriptions. As you can see, "podcast" is the most popular word, which comes at no surprise. However, if you look closer, you can see words such as: business, music, world, church, and learn, which show the diversity among the podcast descriptions.
+Here is a word cloud of the most common words in the text descriptions. As you can see, "podcast" is the most popular word, which comes at no surprise. However, if you look closer, you can see words such as: "business", "music", "world", "church", and "learn", which show the diversity among the podcast topics.
 
 ![descriptions](imgs/word-cloud.png)
 
