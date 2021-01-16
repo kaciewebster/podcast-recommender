@@ -6,7 +6,7 @@
   <img src="https://media4.s-nbcnews.com/i/newscms/2019_33/2974876/sale_16307_primary_image_wide_9d65e3727a5b232c139fc7a76342993a.jpg">
 </p>
 
-This repository will create a web application to recommend podcasts based on user input. Recommendations are determined using calculated similarities between the descriptions, categories, and languages of each podcast. Let's get started!
+This repository will create a web application to recommend podcasts that are not the mainstream based on user input. Recommendations are determined using calculated similarities between the descriptions, categories, and languages of each podcast. Let's get started!
 
 ## The Data
 
@@ -70,6 +70,8 @@ To see this recommender in action, please refer to the [app folder](app). Users 
 <p align="center">
   <img src="imgs/sample.png">
 </p>
+
+You can check it out for yourself [here](http://54.183.20.183:8080/)!
 
 ## For the Future
 
