@@ -72,6 +72,7 @@ To see this recommender in action, please refer to the [app folder](app). Users 
 </p>
 
 You can check it out for yourself [here](http://54.183.20.183:8080/)!
+Please reach out to me if you would like to check it out! I might have the AWS EC2 off to avoid unnecessary costs.
 
 ## For the Future
 
