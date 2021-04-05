@@ -73,6 +73,8 @@ To see this recommender in action, please refer to the [app folder](app). Users 
 
 You can check it out for yourself [here](http://54.183.20.183:8080/)!
 
+Please reach out to me if you would like to check it out! I might have the AWS EC2 off to avoid unnecessary costs.
+
 ## For the Future
 
 In my opinion, I believe this recommender works well. However, there is always room for improvement. One way I would like to touch up on this recommender would be to utilize a dataset or some additional data that would allow me to filter for the most popular podcasts. I believe this would make the recommender more relevant to more people given that some of these podcasts are not well known.
