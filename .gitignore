@@ -1,6 +1,10 @@
 # Ignore files over 100 MBs
 app/similarity_matrix.pkl
 data/features.csv
+app/features.pkl
+data/features.pkl
+app/vectorizer.pkl
+__pycache__
 .DS_Store
 
 # Byte-compiled / optimized / DLL files

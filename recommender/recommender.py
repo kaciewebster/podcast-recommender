@@ -1,65 +1,78 @@
-import pickle
-import random
 import pandas as pd
+import pickle
 import numpy as np
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+import unicodedata
+import string
+from langid.langid import LanguageIdentifier, model
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 class PodcastRecommender():
 
     def __init__(self):
-        self.sim_mat = None
-        self.titles_list = None
-        self.title_recs = None
-        self.podcast_recs = None
+        self.feature_df = None
+        self.tfidf = None
 
-    def get_recommendations(self, title, num_recs=3):
+    def remove_accents(self, input_str):
+        nfkd_form = unicodedata.normalize('NFKD', input_str)
+        only_ascii = nfkd_form.encode('ASCII', 'ignore')
+        return only_ascii.decode()
+
+    def clean_text(self, docs):
+        # Make all words in documents lowercase.
+        low_docs = [doc.lower() for doc in docs]
+        # Remove all accents from documents.
+        acc_docs = [self.remove_accents(doc) for doc in low_docs]
+        # Tokenize each document.
+        tokens = [word_tokenize(doc) for doc in acc_docs]
+        # Remove stopwords and punctuation.
+        stopwords_ = set(stopwords.words('english'))
+        punctuation_ = set(string.punctuation)
+        tokens = [[word for word in token if word not in stopwords_ and word not in punctuation_] for token in tokens]
+        # Apply Lemmatizer Stemmer.
+        lemmatizer = WordNetLemmatizer()
+        lemmatize_tokens = [list(map(lemmatizer.lemmatize, token)) for token in tokens]
+        # Join tokens in each document.
+        token_docs = [' '.join(tokens) for tokens in lemmatize_tokens]
+        return token_docs
+
+    def get_recommendations(self, key_words, num_recs=3):
         '''
-        Returns the top num_recs recommendations for the specified title given the similarity matrix of podcasts, a list of the titles, specified title, and the number of recommendations.
+        Return recommendations based on cosine similarity of key words in the text descriptions
         Input:
-            title: string
+            key_words: list of a string
             num_recs: integer
         Output:
-            list
+            list of lists
         '''
-        self.sim_mat = sim_mat
-        self.titles_list = titles_list
-        idx_titles = {key:val for key, val in zip(range(0, self.sim_mat.shape[0]), self.titles_list)}
-        val_list = list(idx_titles.values())
+        self.feature_df = feature_df
+        self.tfidf = tfidf
 
-        if title in self.titles_list:
-            position = val_list.index(title)
-            recs_idx = self.sim_mat.iloc[position].values.argsort()[-(num_recs+1):-1][::-1]
+        cleaned_test = self.clean_text(key_words)
+        test_matrix = tfidf.transform(cleaned_test)
+        test_matrix = test_matrix.toarray()
+        feature_names = tfidf.get_feature_names()
+        test_df = pd.DataFrame(test_matrix, index=['test'], columns=feature_names)
 
-            self.title_recs = []
-            for idx in recs_idx:
-                self.title_recs.append(titles_list[idx])
+        test_similarities = cosine_similarity(feature_df, test_df).T[0]
+        idxs = test_similarities.argsort()[-(num_recs):]
 
-            self.podcast_recs = {}
-            for title in self.title_recs:
-                self.podcast_recs[title] = cat_dict[title]
-
-        else:
-            self.podcast_recs = {}
-
-        return self.podcast_recs
-
+        return list(zip(list(reversed(list(feature_df.iloc[idxs].index))), list(reversed(list(test_similarities[idxs])))))
 
 
 if __name__=='__main__':
-    # Load files.
-    sim_mat = pd.read_pickle('../app/similarity_matrix.pkl')
-    with open('../app/titles_list.pkl', 'rb') as f:
-        titles_list = pickle.load(f)
-    with open('../app/category_dict.pkl', 'rb') as f:
-        cat_dict = pickle.load(f)
+    # Load files
+    feature_df = pickle.load(open('../data/features.pkl', 'rb'))
+    tfidf = pickle.load(open('../data/vectorizer.pkl','rb'))
 
-    # To test.
-    sample = random.sample(titles_list, 1)
-    sample = sample[0]
-    print('Sample:' + f'[{sample}, {cat_dict[sample]}]')
-
-    sample = 'NPR'
-
-    x = PodcastRecommender()
-    recommendations = x.get_recommendations(sample)
+    # Test
+    test = PodcastRecommender()
+    recommendations = test.get_recommendations(['sports, basketball, nba, talk show'])
     print(recommendations)
 
