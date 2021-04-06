@@ -1,12 +1,11 @@
-# The "Because you listened to ..." Podcast Recommender
-
-## A Content-Based Recommender
+# Work in Progress 
+# Welcome to my Content Based Podcast Recommender
 
 <p align="center">
   <img src="https://media4.s-nbcnews.com/i/newscms/2019_33/2974876/sale_16307_primary_image_wide_9d65e3727a5b232c139fc7a76342993a.jpg">
 </p>
 
-This repository will create a web application to recommend podcasts that are not the mainstream based on user input. Recommendations are determined using calculated similarities between the descriptions, categories, and languages of each podcast. Let's get started!
+This repository creates a web application to recommend offbeat podcasts based on user input. Recommendations are determined using calculated similarities between key words that the user will provide and the text description of each podcast. Let's get started!
 
 ## The Data
 
@@ -24,7 +23,7 @@ The data was downloaded from [Kaggle](https://www.kaggle.com/listennotes/all-pod
 
 ## Exploration
 
-Since the recommender was built on the text descriptions, categories, and languages associated with each podcast, let's take a look at them.
+Since the recommender was built on the text descriptions associated with each podcast, let's take a look at them.
 
 ### The Descriptions
 
