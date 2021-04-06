@@ -51,4 +51,5 @@ Please reach out to me if you would like to check it out! I might have the AWS E
 Some next steps are:
 
 **- Expand the data base to other languages since it only contains English podcasts**
+
 **- Play with the css style of this web application**
