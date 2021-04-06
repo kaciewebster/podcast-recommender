@@ -41,7 +41,7 @@ To see the details of how this recommender was created, please refer to the [rec
 To see this recommender in action, please refer to the [app folder](app). Users will be asked to input a list of key words they want along with the number of recommendations they would like. Below is a sample output if the user were to input "bigfoot, alien, supernatural, ufo, paranormal" with 3 recommendations.
 
 <p align="center">
-  <img src="imgs/sample.png">
+  <img src="imgs/web-app-example.png">
 </p>
 
 Please reach out to me if you would like to check it out! I might have the AWS EC2 off to avoid unnecessary costs.
