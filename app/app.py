@@ -5,8 +5,6 @@ from recommender import PodcastRecommender
 
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
-feature_df = pickle.load(open('features.pkl', 'rb'))
-tfidf = pickle.load(open('vectorizer.pkl','rb'))
 pr = PodcastRecommender()
 
 @app.route('/', methods=['GET'])
@@ -20,7 +18,6 @@ def recommend():
 
     recommendations = pr.get_recommendations([key_words], num_recs)
     return render_template('recommend.html', names=recommendations)
-
 
 
 if __name__ == '__main__':

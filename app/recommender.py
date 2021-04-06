@@ -18,9 +18,12 @@ class PodcastRecommender():
     def __init__(self):
         self.feature_df = None
         self.tfidf = None
+        self.podcast_data = None
 
         self.feature_df = pickle.load(open('features.pkl', 'rb'))
         self.tfidf = pickle.load(open('vectorizer.pkl','rb'))
+        self.podcast_data = pd.read_csv('podcasts.csv')
+
 
     def remove_accents(self, input_str):
         nfkd_form = unicodedata.normalize('NFKD', input_str)
@@ -66,10 +69,15 @@ class PodcastRecommender():
             idxs = test_similarities.argsort()[-(num_recs):]
 
             titles = list(reversed(list(self.feature_df.iloc[idxs].index)))
+
             cos_scores = list(reversed(list(test_similarities[idxs])))
             cos_scores_round = [round(score, 2) for score in cos_scores]
 
-            return list(zip(titles, cos_scores_round))
+            descriptions = []
+            for title in titles:
+                descriptions.append(self.podcast_data[self.podcast_data['title']==title]['description'].item())
+
+            return list(zip(titles, descriptions, cos_scores_round))
 
         else:
             return 'Please provide some key words.'
